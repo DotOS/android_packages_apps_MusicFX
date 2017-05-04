@@ -24,6 +24,8 @@ import com.android.musicfx.widget.Knob.OnKnobChangeListener;
 import com.android.musicfx.widget.Visualizer;
 import com.android.musicfx.widget.Visualizer.OnSeekBarChangeListener;
 
+import android.Manifest;
+
 import android.app.ActionBar;
 import android.app.Activity;
 import android.app.ActivityManager;
@@ -39,15 +41,19 @@ import android.content.DialogInterface.OnCancelListener;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.content.res.ColorStateList;
 import android.content.res.Configuration;
+import android.support.v4.content.ContextCompat;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.media.AudioManager;
 import android.media.audiofx.AudioEffect;
 import android.media.audiofx.AudioEffect.Descriptor;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.SystemProperties;
+import android.content.pm.PackageManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -69,6 +75,7 @@ import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
@@ -78,9 +85,22 @@ import android.widget.Toast;
 import android.widget.Switch;
 import android.util.DisplayMetrics;
 
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
+import org.xmlpull.v1.XmlPullParserFactory;
+
+import java.util.ArrayList;
 import java.util.Formatter;
 import java.util.Locale;
 import java.util.UUID;
+
+import java.io.File;
+import java.io.FileFilter;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.IOException;
 
 /**
  *
@@ -165,13 +185,22 @@ public class ActivityMusic extends AppCompatActivity {
     private int mTextColor;
     private int mSpinoffColor;
 
+    private Runnable mDoAfterPermCheck;
+
+    private static final int PERMISSION_REQUEST_STORAGE = 0;
+
     /**
      * Array containing RSid of preset reverb names.
      */
     private static final int[] mReverbPresetRSids = {
-        R.string.none, R.string.smallroom, R.string.mediumroom, R.string.largeroom,
-        R.string.mediumhall, R.string.largehall, R.string.plate
+            R.string.none, R.string.smallroom, R.string.mediumroom, R.string.largeroom,
+            R.string.mediumhall, R.string.largehall, R.string.plate
     };
+
+    /**
+     * Presets
+     */
+    private static final String PRESETS_FOLDER = "MusicFXPresets";
 
     /**
      * Context field
@@ -223,8 +252,8 @@ public class ActivityMusic extends AppCompatActivity {
             if (effect.type.equals(AudioEffect.EFFECT_TYPE_VIRTUALIZER)) {
                 mVirtualizerSupported = true;
                 if (effect.uuid.equals(UUID.fromString("1d4033c0-8557-11df-9f2d-0002a5d5c51b"))
-                    || effect.uuid.equals(UUID.fromString("e6c98a16-22a3-11e2-b87b-f23c91aec05e"))
-                    || effect.uuid.equals(UUID.fromString("d3467faa-acc7-4d34-acaf-0002a5d5c51b"))) {
+                        || effect.uuid.equals(UUID.fromString("e6c98a16-22a3-11e2-b87b-f23c91aec05e"))
+                        || effect.uuid.equals(UUID.fromString("d3467faa-acc7-4d34-acaf-0002a5d5c51b"))) {
                     mVirtualizerIsHeadphoneOnly = true;
                     Log.d(TAG, effect.name.toString() + ", mVirtualizerIsHeadphoneOnly = " + mVirtualizerIsHeadphoneOnly);
                 }
@@ -269,7 +298,7 @@ public class ActivityMusic extends AppCompatActivity {
         }
         mSWStrengthNames = getResources().getStringArray(R.array.stereowide_modes);
 
-        mCurrentLevelText = (TextView)findViewById(R.id.switchstatus);
+        mCurrentLevelText = (TextView) findViewById(R.id.switchstatus);
         mCurrentLevelText.setCompoundDrawableTintList(new ColorStateList(new int[][] { new int[0] },
                 new int[] { getResources().getColor(R.color.current_out_source_color) }));
 
@@ -287,7 +316,7 @@ public class ActivityMusic extends AppCompatActivity {
                     // effect parameter.
                     @Override
                     public void onValueChanged(final Knob knob, final int value,
-                        final boolean fromUser) {
+                                               final boolean fromUser) {
                         // set parameter and state
                         ControlPanelEffect.setParameterInt(mContext, mCurrentLevel,
                                 ControlPanelEffect.Key.virt_strength, value);
@@ -318,14 +347,14 @@ public class ActivityMusic extends AppCompatActivity {
 
                     @Override
                     public void onValueChanged(final Knob knob, final int value,
-                            final boolean fromUser) {
+                                               final boolean fromUser) {
                         // set parameter and state
                         ControlPanelEffect.setParameterInt(mContext, mCurrentLevel,
                                 ControlPanelEffect.Key.bb_strength, value);
                     }
 
                     @Override
-                    public boolean onSwitchChanged(final Knob knob,boolean on) {
+                    public boolean onSwitchChanged(final Knob knob, boolean on) {
                         ControlPanelEffect.setParameterBoolean(mContext, mCurrentLevel,
                                 ControlPanelEffect.Key.bb_enabled, on);
                         return true;
@@ -342,7 +371,7 @@ public class ActivityMusic extends AppCompatActivity {
                     mEQPreset = 0;
                 }
                 mEQPresetPrevious = mEQPreset;
-                equalizerBandsInit((LinearLayout)findViewById(R.id.eqcontainer));
+                equalizerBandsInit((LinearLayout) findViewById(R.id.eqcontainer));
                 equalizerPresetsInit();
             }
 
@@ -357,7 +386,7 @@ public class ActivityMusic extends AppCompatActivity {
             }
 
             View spSpinnerContainer = findViewById(R.id.swSpinnerContainer);
-            mSWStrengthSpinner = (Spinner)findViewById(R.id.swSpinner);
+            mSWStrengthSpinner = (Spinner) findViewById(R.id.swSpinner);
             if (mStereoWideSupported) {
                 mSWStrength = ControlPanelEffect.getParameterInt(mContext, mCurrentLevel,
                         ControlPanelEffect.Key.sw_strength);
@@ -386,7 +415,22 @@ public class ActivityMusic extends AppCompatActivity {
                     updateForLevel(ControlPanelEffect.HEADSET_PREF_SCOPE);
                 } else if (id == R.id.menu_bluetooth) {
                     updateForLevel(ControlPanelEffect.BLUETOOTH_PREF_SCOPE);
+                } else if (id == R.id.save_preset) {
+                    needRequestStoragePermission(new Runnable() {
+                        @Override
+                        public void run() {
+                            savePresetDialog();
+                        }
+                    });
+                } else if (id == R.id.load_preset) {
+                    needRequestStoragePermission(new Runnable() {
+                        @Override
+                        public void run() {
+                            loadPresetDialog();
+                        }
+                    });
                 }
+
                 return true;
             }
         });
@@ -743,7 +787,7 @@ public class ActivityMusic extends AppCompatActivity {
         }
         if (mEqualizerSupported) {
             mEQPreset = ControlPanelEffect.getParameterInt(mContext, mCurrentLevel,
-                ControlPanelEffect.Key.eq_current_preset);
+                    ControlPanelEffect.Key.eq_current_preset);
             if (mEQPreset >= mEQPresetNames.length) {
                 mEQPreset = 0;
             }
@@ -772,7 +816,7 @@ public class ActivityMusic extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     final Toast toast = Toast.makeText(mContext,
-                        getString(R.string.power_on_prompt), Toast.LENGTH_SHORT);
+                            getString(R.string.power_on_prompt), Toast.LENGTH_SHORT);
                     toast.setGravity(Gravity.CENTER, 0, 0);
                     toast.show();
                 }
@@ -820,7 +864,7 @@ public class ActivityMusic extends AppCompatActivity {
         final OnSeekBarChangeListener listener = new OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(final Visualizer v, final int progress,
-                    final boolean fromUser) {
+                                          final boolean fromUser) {
                 for (short band = 0; band < mNumberEqualizerBands; ++band) {
                     if (mEqualizerVisualizer[band] == v) {
                         final short level = (short) (progress + mEqualizerMinBandLevel);
@@ -922,10 +966,8 @@ public class ActivityMusic extends AppCompatActivity {
     /**
      * Updates/sets a given EQ band level.
      *
-     * @param band
-     *            Band id
-     * @param level
-     *            EQ band level
+     * @param band  Band id
+     * @param level EQ band level
      */
     private void equalizerBandUpdate(final int band, final int level) {
         ControlPanelEffect.setParameterInt(mContext, mCurrentLevel,
@@ -935,8 +977,7 @@ public class ActivityMusic extends AppCompatActivity {
     /**
      * Sets the given EQ preset.
      *
-     * @param preset
-     *            EQ preset id.
+     * @param preset EQ preset id.
      */
     private void equalizerSetPreset(final int preset) {
         ControlPanelEffect.setParameterInt(mContext, mCurrentLevel,
@@ -946,8 +987,7 @@ public class ActivityMusic extends AppCompatActivity {
     /**
      * Sets the given PR preset.
      *
-     * @param preset
-     *            PR preset id.
+     * @param preset PR preset id.
      */
     private void presetReverbSetPreset(final int preset) {
         ControlPanelEffect.setParameterInt(mContext, mCurrentLevel,
@@ -984,4 +1024,231 @@ public class ActivityMusic extends AppCompatActivity {
         }
         return false;
     }
+
+    public void savePresetDialog() {
+        // We first list existing presets
+        File presetsDir = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/" + PRESETS_FOLDER);
+        presetsDir.mkdirs();
+
+        Log.e(TAG, "Saving preset to " + presetsDir.getAbsolutePath());
+
+        // The first entry is "New preset", so we offset
+        File[] presets = presetsDir.listFiles((FileFilter) null);
+        final String[] names = new String[presets != null ? presets.length + 1 : 1];
+        names[0] = getString(R.string.new_preset);
+        if (presets != null) {
+            for (int i = 0; i < presets.length; i++) {
+                names[i + 1] = presets[i].getName();
+            }
+        }
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(ActivityMusic.this);
+        builder.setTitle(R.string.save_preset)
+                .setItems(names, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        if (which == 0) {
+                            // New preset, we ask for the name
+                            AlertDialog.Builder inputBuilder = new AlertDialog.Builder(ActivityMusic.this);
+                            inputBuilder.setTitle(R.string.new_preset);
+
+                            // Set an EditText view to get user input
+                            final EditText input = new EditText(ActivityMusic.this);
+                            inputBuilder.setView(input);
+
+                            inputBuilder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int whichButton) {
+                                    String value = input.getText().toString();
+                                    savePreset(value);
+                                }
+                            });
+                            inputBuilder.setNegativeButton(android.R.string.cancel, null);
+
+                            inputBuilder.show();
+                        } else {
+                            savePreset(names[which]);
+                        }
+                    }
+                });
+        Dialog dlg = builder.create();
+        dlg.show();
+    }
+
+    public void loadPresetDialog() {
+        File presetsDir = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/" + PRESETS_FOLDER);
+        presetsDir.mkdirs();
+
+        File[] presets = presetsDir.listFiles((FileFilter) null);
+        final String[] names = new String[presets != null ? presets.length : 0];
+        if (presets != null) {
+            for (int i = 0; i < presets.length; i++) {
+                names[i] = presets[i].getName();
+            }
+        }
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(ActivityMusic.this);
+        builder.setTitle(R.string.load_preset)
+                .setItems(names, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        loadPreset(names[which]);
+                    }
+                });
+        builder.create().show();
+    }
+
+    public void savePreset(String name) {
+        final String spDir = getApplicationInfo().dataDir + "/shared_prefs/";
+
+        // Copy the SharedPreference to our output directory
+        File presetDir = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/" + PRESETS_FOLDER + "/" + name);
+        presetDir.mkdirs();
+
+        try {
+            for (String prefLevel : ControlPanelEffect.ALL_PREF_SCOPES) {
+                copy(new File(spDir, prefLevel + ".xml"), new File(presetDir, prefLevel + ".xml"));
+            }
+        } catch (IOException e) {
+            Log.e(TAG, "Cannot save preset", e);
+        }
+
+        Toast.makeText(getApplicationContext(), mContext.getString(R.string.preset_save_toast), Toast.LENGTH_SHORT).show();
+    }
+
+    public void loadPreset(String name) {
+        File presetDir = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/" + PRESETS_FOLDER + "/" + name);
+        if (!presetDir.exists()) {
+            return;
+        }
+
+        try {
+            loadAllXMLFile(presetDir.getAbsolutePath());
+            updateUI();
+        } catch (Exception e) {
+            Log.e(TAG, "LoadPreset Exception : " + e);
+        }
+
+        Toast.makeText(getApplicationContext(), mContext.getString(R.string.preset_load_toast), Toast.LENGTH_SHORT).show();
+    }
+
+
+    public static void copy(File src, File dst) throws IOException {
+        InputStream in = new FileInputStream(src);
+        OutputStream out = new FileOutputStream(dst);
+
+        // Transfer bytes from in to out
+        byte[] buf = new byte[1024];
+        int len;
+        while ((len = in.read(buf)) > 0) {
+            out.write(buf, 0, len);
+        }
+        in.close();
+        out.close();
+    }
+
+    private boolean needRequestStoragePermission(Runnable runWithPerms) {
+        boolean needRequest = false;
+        String[] permissions = {
+                Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                Manifest.permission.READ_EXTERNAL_STORAGE
+        };
+        ArrayList<String> permissionList = new ArrayList<String>();
+        for (String permission : permissions) {
+            if (checkSelfPermission(permission) != PackageManager.PERMISSION_GRANTED) {
+                permissionList.add(permission);
+                needRequest = true;
+            }
+        }
+
+        if (needRequest) {
+            int count = permissionList.size();
+            if (count > 0) {
+                String[] permissionArray = new String[count];
+                for (int i = 0; i < count; i++) {
+                    permissionArray[i] = permissionList.get(i);
+                }
+                mDoAfterPermCheck = runWithPerms;
+                requestPermissions(permissionArray, PERMISSION_REQUEST_STORAGE);
+            }
+        } else {
+            runWithPerms.run();
+        }
+
+        return needRequest;
+    }
+
+    private boolean checkPermissionGrantResults(int[] grantResults) {
+        for (int result : grantResults) {
+            if (result != PackageManager.PERMISSION_GRANTED) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String permissions[],
+                                           int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        switch (requestCode) {
+            case PERMISSION_REQUEST_STORAGE: {
+                if (checkPermissionGrantResults(grantResults)) {
+                    if (mDoAfterPermCheck != null) {
+                        mDoAfterPermCheck.run();
+                        mDoAfterPermCheck = null;
+                    }
+                }
+            }
+        }
+    }
+
+    private void loadRessourcesFromXmlParser(XmlPullParser parser, String prefLevel) throws XmlPullParserException, IOException {
+        int eventType = parser.getEventType();
+
+        final SharedPreferences sharedPreferences = getSharedPreferences(prefLevel, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        do {
+            if (eventType != XmlPullParser.START_TAG) {
+                continue;
+            }
+            switch (parser.getName()) {
+                case "boolean":
+                    editor.putBoolean(parser.getAttributeValue(null, "name"), Boolean.parseBoolean(parser.getAttributeValue(null, "value")));
+                    break;
+                case "int":
+                    editor.putInt(parser.getAttributeValue(null, "name"), Integer.parseInt(parser.getAttributeValue(null, "value")));
+                    break;
+                case "string":
+                    editor.putString(parser.getAttributeValue(null, "name"), parser.getAttributeValue(null, "value"));
+                default:
+                    break;
+            }
+        } while ((eventType = parser.next()) != XmlPullParser.END_DOCUMENT);
+
+        editor.commit();
+    }
+
+    private void loadXMLFile(String xmlFileName, String prefLevel) throws XmlPullParserException, IOException {
+
+        InputStream in = null;
+        XmlPullParserFactory factory = null;
+        XmlPullParser parser = null;
+
+        try {
+            factory = XmlPullParserFactory.newInstance();
+            parser = factory.newPullParser();
+            in = new FileInputStream(xmlFileName);
+            parser = factory.newPullParser();
+            parser.setInput(in, "UTF-8");
+            loadRessourcesFromXmlParser(parser, prefLevel);
+        } catch (Exception e) {
+            Log.e(TAG, "loadXMLFile Exception :" + e);
+        }
+    }
+
+    private void loadAllXMLFile(String fromDir) throws XmlPullParserException, IOException {
+        for (String prefLevel : ControlPanelEffect.ALL_PREF_SCOPES) {
+            loadXMLFile(new File(fromDir, prefLevel + ".xml").getAbsolutePath(), prefLevel);
+        }
+    }
 }
+
