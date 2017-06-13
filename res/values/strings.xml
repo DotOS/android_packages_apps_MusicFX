@@ -41,6 +41,15 @@
     <string name="pop">Pop</string>
     <string name="rock">Rock</string>
     <string name="ci_extreme">Electronic</string>
+    <string name="acoustic">Acoustic</string>
+    <string name="bass_booster">Bass Booster</string>
+    <string name="bass_reducer">Bass Reducer</string>
+    <string name="deep">Deep</string>
+    <string name="rhythm_and_blues">R&amp;B</string>
+    <string name="small_speakers">Small Speakers</string>
+    <string name="treble_booster">Treble Booster</string>
+    <string name="treble_reducer">Treble Reducer</string>
+    <string name="vocal_booster">Vocal Booster</string>
     <string name="user">Custom</string>
 
     <string name="none">None</string>
