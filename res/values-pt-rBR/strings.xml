@@ -63,4 +63,5 @@
   <string name="stereowide_high">Alta</string>
   <string name="stereowide_none">Nenhum</string>
   <string name="sw_title">Amplificar Stereo:</string>
+  <string name="current_output">Saída atual:</string>
 </resources>
