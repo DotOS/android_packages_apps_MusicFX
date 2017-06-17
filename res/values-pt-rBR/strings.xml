@@ -67,10 +67,10 @@
   <string name="drawer_item_bluetooth">Bluetooth</string>
   <string name="drawer_open">Abrir gaveta de navegação</string>
   <string name="drawer_close">Fechar gaveta de navegação</string>
+  <string name="current_output">Saída atual:</string>
   <string name="stereowide_light">Claro</string>
   <string name="stereowide_moderate">Moderado</string>
   <string name="stereowide_high">Alta</string>
   <string name="stereowide_none">Nenhum</string>
   <string name="sw_title">Amplificar Stereo:</string>
-  <string name="current_output">Saída atual:</string>
 </resources>
