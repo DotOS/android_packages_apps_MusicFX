@@ -15,6 +15,62 @@
      limitations under the License.
 -->
 <resources>
+  <string name="app_name">MusicFX</string>
   <!-- ControlPanelMusic strings -->
+  <string name="no_effects">Efek tidak tersedia.</string>
+  <string name="main_toggle_effects_title">Efek audio</string>
+  <string name="eq_dialog_title">Equaliser</string>
+  <string name="headset_plug">Pasang headphone untuk efek ini.</string>
+  <string name="combo_device">Efek hanya didukung pada headphone.</string>
+  <string name="bass_boost_strength">Peningkatan bass</string>
+  <string name="virtualizer_strength">Suara surround</string>
+  <string name="pr_title">Gema:</string>
+  <string name="pr_summary">Efek gema ruangan tambahan</string>
+  <string name="pr_dialog_title">Contoh gema</string>
+  <string name="setup">Penyiapan</string>
+  <string name="normal">Normal</string>
+  <string name="classical">Klasik</string>
+  <string name="dance">Dansa</string>
+  <string name="flat">Datar</string>
+  <string name="folk">Folk</string>
+  <string name="heavy_metal">Heavy Metal</string>
+  <string name="hip_hop">Hip Hop</string>
+  <string name="jazz">Jazz</string>
+  <string name="pop">Pop</string>
+  <string name="rock">Rock</string>
+  <string name="ci_extreme">Penguat FX</string>
+  <string name="acoustic">Akustik</string>
+  <string name="bass_booster">Penambah Bass</string>
+  <string name="bass_reducer">Pengurang Bass</string>
+  <string name="deep">Dalam</string>
+  <string name="rhythm_and_blues">R&amp;B</string>
+  <string name="small_speakers">Speaker Kecil</string>
+  <string name="treble_booster">Penambah Treble</string>
+  <string name="treble_reducer">Pengurang Treble</string>
+  <string name="vocal_booster">Penambah Vokal</string>
+  <string name="user">Pengguna</string>
+  <string name="none">Kosong</string>
+  <string name="smallroom">Ruangan Kecil</string>
+  <string name="mediumroom">Ruangan Sedang</string>
+  <string name="largeroom">Ruangan Besar</string>
+  <string name="mediumhall">Aula Sedang</string>
+  <string name="largehall">Aula Besar</string>
+  <string name="plate">Plat</string>
+  <string name="eq_custom">Untuk mengatur, pilih \"Kustom\"</string>
+  <string name="power_on_prompt">Aktifkan equaliser dulu sebelum mengatur apapun</string>
   <!-- title of control panel picker dialog [CHAR LIMIT=30] -->
+  <string name="picker_title">Panel kontrol efek musik</string>
+  <string name="toggle_button_on">Nyala</string>
+  <string name="toggle_button_off">Mati</string>
+  <string name="drawer_item_speaker">Speaker</string>
+  <string name="drawer_item_headset">Headphone</string>
+  <string name="drawer_item_bluetooth">Bluetooth</string>
+  <string name="drawer_open">Buka papan navigasi</string>
+  <string name="drawer_close">Tutup papan navigasi</string>
+  <string name="current_output">Keluaran sekarang:</string>
+  <string name="stereowide_light">Ringan</string>
+  <string name="stereowide_moderate">Sedang</string>
+  <string name="stereowide_high">Tinggi</string>
+  <string name="stereowide_none">Kosong</string>
+  <string name="sw_title">Pelebar Stereo:</string>
 </resources>

@@ -15,6 +15,52 @@
      limitations under the License.
 -->
 <resources>
+  <string name="app_name">MusicFX</string>
   <!-- ControlPanelMusic strings -->
+  <string name="no_effects">Effets indisponibles</string>
+  <string name="main_toggle_effects_title">Effets audio</string>
+  <string name="eq_dialog_title">Égaliseur</string>
+  <string name="headset_plug">Veuillez brancher un casque pour ces effets.</string>
+  <string name="combo_device">Effets pris en charge uniquement pour la lecture avec un casque.</string>
+  <string name="bass_boost_strength">Amplification des basses</string>
+  <string name="virtualizer_strength">Son surround</string>
+  <string name="pr_title">Réverbération</string>
+  <string name="pr_summary">Effets de chambre réverbérante supplémentaires</string>
+  <string name="pr_dialog_title">Réverbération prédéfinie</string>
+  <string name="setup">Configuration</string>
+  <string name="normal">Normale</string>
+  <string name="classical">Classique</string>
+  <string name="dance">Dance</string>
+  <string name="flat">Plat</string>
+  <string name="folk">Folk</string>
+  <string name="heavy_metal">Heavy Metal</string>
+  <string name="hip_hop">Hip-Hop</string>
+  <string name="jazz">Jazz</string>
+  <string name="pop">Pop</string>
+  <string name="rock">Rock</string>
+  <string name="ci_extreme">FX booster</string>
+  <string name="user">Utilisateur</string>
+  <string name="none">Aucun</string>
+  <string name="smallroom">Petite chambre</string>
+  <string name="mediumroom">Chambre moyenne</string>
+  <string name="largeroom">Grande chambre</string>
+  <string name="mediumhall">Salle moyenne</string>
+  <string name="largehall">Grande salle</string>
+  <string name="plate">Plat</string>
+  <string name="eq_custom">Pour personnaliser, appuyer sur \"Utilisateur\"</string>
+  <string name="power_on_prompt">Activer l\'égaliseur avant d\'essayer de configurer quoi que ce soit</string>
   <!-- title of control panel picker dialog [CHAR LIMIT=30] -->
+  <string name="picker_title">Configuration effets musicaux</string>
+  <string name="toggle_button_on">Activé</string>
+  <string name="toggle_button_off">Désactivé</string>
+  <string name="drawer_item_speaker">Haut-parleur</string>
+  <string name="drawer_item_headset">Écouteurs</string>
+  <string name="drawer_item_bluetooth">Bluetooth</string>
+  <string name="drawer_open">Ouvrir le tiroir de navigation</string>
+  <string name="drawer_close">Fermer le tiroir de navigation</string>
+  <string name="stereowide_light">Légère</string>
+  <string name="stereowide_moderate">Modérée</string>
+  <string name="stereowide_high">Élevée</string>
+  <string name="stereowide_none">Aucune</string>
+  <string name="sw_title">Amplification stéréo</string>
 </resources>
