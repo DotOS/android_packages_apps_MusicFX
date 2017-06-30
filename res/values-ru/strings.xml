@@ -62,4 +62,5 @@
   <string name="stereowide_high">Сильный</string>
   <string name="stereowide_none">Нет</string>
   <string name="sw_title">Стереоуширитель</string>
+  <!-- Presets -->
 </resources>

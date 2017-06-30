@@ -33,4 +33,5 @@
   <string name="stereowide_light">Licht</string>
   <string name="stereowide_high">Hoog</string>
   <string name="stereowide_none">Geen</string>
+  <!-- Presets -->
 </resources>

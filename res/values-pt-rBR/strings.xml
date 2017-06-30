@@ -73,4 +73,11 @@
   <string name="stereowide_high">Alta</string>
   <string name="stereowide_none">Nenhum</string>
   <string name="sw_title">Amplificar Stereo:</string>
+  <!-- Presets -->
+  <string name="preset_menu">Perfis</string>
+  <string name="save_preset">Salvar perfil</string>
+  <string name="load_preset">Carregar perfil</string>
+  <string name="new_preset">Novo perfil...</string>
+  <string name="preset_save_toast">Perfil salvo</string>
+  <string name="preset_load_toast">Perfil carregado</string>
 </resources>

@@ -63,4 +63,5 @@
   <string name="stereowide_high">Élevée</string>
   <string name="stereowide_none">Aucune</string>
   <string name="sw_title">Amplification stéréo</string>
+  <!-- Presets -->
 </resources>

@@ -64,4 +64,5 @@
   <string name="stereowide_high">Magas</string>
   <string name="stereowide_none">Nincs</string>
   <string name="sw_title">Sztereó widener</string>
+  <!-- Presets -->
 </resources>

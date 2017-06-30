@@ -73,4 +73,5 @@
   <string name="stereowide_high">Wysoki</string>
   <string name="stereowide_none">Żaden</string>
   <string name="sw_title">Rozszerzenie stereo:</string>
+  <!-- Presets -->
 </resources>
