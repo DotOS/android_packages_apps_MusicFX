@@ -64,4 +64,10 @@
   <string name="stereowide_none">Нет</string>
   <string name="sw_title">Расширенное стерео</string>
   <!-- Presets -->
+  <string name="preset_menu">Пресеты</string>
+  <string name="save_preset">Сохрн. пресет</string>
+  <string name="load_preset">Загрузить пресет</string>
+  <string name="new_preset">Новый пресет...</string>
+  <string name="preset_save_toast">Пресет сохранен</string>
+  <string name="preset_load_toast">Пресет загружен</string>
 </resources>

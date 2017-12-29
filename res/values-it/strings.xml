@@ -64,4 +64,10 @@
   <string name="stereowide_none">Nessuno</string>
   <string name="sw_title">Amplificatore stereo</string>
   <!-- Presets -->
+  <string name="preset_menu">Presets</string>
+  <string name="save_preset">Salva preset</string>
+  <string name="load_preset">Carica preset</string>
+  <string name="new_preset">Nuovo preset...</string>
+  <string name="preset_save_toast">Preset salvato</string>
+  <string name="preset_load_toast">Preset caricato</string>
 </resources>

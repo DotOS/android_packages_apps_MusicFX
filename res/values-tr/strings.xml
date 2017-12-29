@@ -17,7 +17,7 @@
 <resources>
   <string name="app_name">MusicFX</string>
   <!-- ControlPanelMusic strings -->
-  <string name="no_effects">Efektler kullanılamıyor.</string>
+  <string name="no_effects">Efektler mevcûd değil.</string>
   <string name="main_toggle_effects_title">Ses efektleri</string>
   <string name="eq_dialog_title">Dengeleyici</string>
   <string name="headset_plug">Bu efektler için kulaklığı takın.</string>
@@ -26,7 +26,7 @@
   <string name="virtualizer_strength">Surround ses</string>
   <string name="pr_title">Yankılanma</string>
   <string name="pr_summary">İlâve oda yankılanması efektleri</string>
-  <string name="pr_dialog_title">Yankılanma ön ayarı</string>
+  <string name="pr_dialog_title">Hazır yankılanma ayarı</string>
   <string name="setup">Kurulum</string>
   <string name="normal">Normal</string>
   <string name="classical">Klasik</string>
@@ -39,7 +39,7 @@
   <string name="pop">Pop</string>
   <string name="rock">Rock</string>
   <string name="ci_extreme">Elektronik</string>
-  <string name="user">Özel</string>
+  <string name="user">Hususî</string>
   <string name="none">Hiçbiri</string>
   <string name="smallroom">Küçük Oda</string>
   <string name="mediumroom">Orta Oda</string>
@@ -47,10 +47,10 @@
   <string name="mediumhall">Orta Salon</string>
   <string name="largehall">Geniş Salon</string>
   <string name="plate">Plaka</string>
-  <string name="eq_custom">Özelleştirmek için, \"Özel\" öğesini seçin</string>
+  <string name="eq_custom">Hususîleştirmek için, \"Hususî\" öğesini seçin</string>
   <string name="power_on_prompt">Sağ üstteki güç düğmesine basın.</string>
   <!-- title of control panel picker dialog [CHAR LIMIT=30] -->
-  <string name="picker_title">Müzik efektlerini denetim masası</string>
+  <string name="picker_title">Müzik efektlerinin denetim masası</string>
   <string name="toggle_button_on">Açık</string>
   <string name="toggle_button_off">Kapalı</string>
   <string name="drawer_item_speaker">Hoparlör</string>
@@ -68,4 +68,6 @@
   <string name="save_preset">Hazır ayarı kaydet</string>
   <string name="load_preset">Hazır ayar yükle</string>
   <string name="new_preset">Yeni hazır ayar...</string>
+  <string name="preset_save_toast">Hazır ayar kaydedildi</string>
+  <string name="preset_load_toast">Hazır ayar yüklendi</string>
 </resources>
