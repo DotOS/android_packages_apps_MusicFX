@@ -48,4 +48,5 @@
     <color name="spinner_disabled">#76777c</color>
     <color name="spinner_reverb_list">@android:color/white</color>
     <color name="toolbar_thumb_color">@color/accentColor</color>
+    <color name="ic_launcher_background">#ff4444</color>
 </resources>
