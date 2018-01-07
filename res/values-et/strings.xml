@@ -17,8 +17,10 @@
 <resources>
   <string name="app_name">MusicFX</string>
   <!-- ControlPanelMusic strings -->
+  <string name="none">Puudub</string>
   <!-- title of control panel picker dialog [CHAR LIMIT=30] -->
   <string name="toggle_button_on">Sees</string>
   <string name="toggle_button_off">Väljas</string>
+  <string name="stereowide_none">Puudub</string>
   <!-- Presets -->
 </resources>

@@ -68,4 +68,6 @@
   <string name="save_preset">Hangzás mentése</string>
   <string name="load_preset">Hangzás betöltése</string>
   <string name="new_preset">Új hangzás...</string>
+  <string name="preset_save_toast">Hangzás mentve</string>
+  <string name="preset_load_toast">Hangzás betöltve</string>
 </resources>

@@ -68,4 +68,6 @@
   <string name="save_preset">Uložiť predvoľbu</string>
   <string name="load_preset">Načítať predvoľbu</string>
   <string name="new_preset">Nová predvoľba...</string>
+  <string name="preset_save_toast">Predvoľba bola uložená</string>
+  <string name="preset_load_toast">Predvoľba bola načítaná</string>
 </resources>
