@@ -496,12 +496,12 @@ public class ActivityMusic extends AppCompatActivity {
 
     private final String localizePresetName(final String name) {
         final String[] names = {
-                "Normal", "Classical", "Dance", "Flat", "Folk",
-                "Heavy Metal", "Hip Hop", "Jazz", "Pop", "Rock"
+                "Acoustic", "Bass Booster", "Bass Reducer", "Classical", "Deep",
+                "Flat", "R&B", "Rock", "Small Speakers", "Treble Booster", "Treble Reducer", "Vocal Booster"
         };
         final int[] ids = {
-                R.string.normal, R.string.classical, R.string.dance, R.string.flat, R.string.folk,
-                R.string.heavy_metal, R.string.hip_hop, R.string.jazz, R.string.pop, R.string.rock
+                R.string.acoustic, R.string.bass_booster, R.string.bass_reducer, R.string.classical, R.string.deep,
+                R.string.flat, R.string.r_and_b, R.string.rock, R.string.small_speakers, R.string.treble_booster, R.string.treble_reducer, R.string.vocal_booster
         };
 
         for (int i = names.length - 1; i >= 0; --i) {
