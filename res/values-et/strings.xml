@@ -17,10 +17,33 @@
 <resources>
   <string name="app_name">MusicFX</string>
   <!-- ControlPanelMusic strings -->
+  <string name="eq_dialog_title">Ekvalaiser</string>
+  <string name="setup">Seadistus</string>
+  <string name="normal">Tavaline</string>
+  <string name="classical">Klassikaline</string>
+  <string name="dance">Tants</string>
+  <string name="folk">Folk</string>
+  <string name="heavy_metal">Heavy Metal</string>
+  <string name="hip_hop">Hip Hop</string>
+  <string name="jazz">Jazz</string>
+  <string name="pop">Popp</string>
+  <string name="rock">Rokk</string>
+  <string name="user">Kohandatud</string>
   <string name="none">Puudub</string>
+  <string name="smallroom">SmallRoom</string>
+  <string name="largeroom">LargeRoom</string>
   <!-- title of control panel picker dialog [CHAR LIMIT=30] -->
   <string name="toggle_button_on">Sees</string>
   <string name="toggle_button_off">Väljas</string>
+  <string name="drawer_item_speaker">Kõlar</string>
+  <string name="drawer_item_headset">Kõrvaklapid</string>
+  <string name="drawer_item_bluetooth">Bluetooth</string>
+  <string name="drawer_open">Ava navigatsioonisahtel</string>
+  <string name="drawer_close">Sulge navigatsioonisahtel</string>
+  <string name="stereowide_light">Hele</string>
+  <string name="stereowide_moderate">Mõõdukas</string>
+  <string name="stereowide_high">Kõrge</string>
   <string name="stereowide_none">Puudub</string>
   <!-- Presets -->
+  <string name="preset_menu">Eelseadistused</string>
 </resources>
