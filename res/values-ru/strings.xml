@@ -41,13 +41,13 @@
   <string name="ci_extreme">Усилитель FX</string>
   <string name="user">Своя настройка</string>
   <string name="none">Нет</string>
-  <string name="smallroom">МалаяКомната</string>
-  <string name="mediumroom">СредняяКомната</string>
-  <string name="largeroom">БольшаяКомната</string>
-  <string name="mediumhall">СреднийХолл</string>
-  <string name="largehall">БольшойХолл</string>
+  <string name="smallroom">Маленькая комната</string>
+  <string name="mediumroom">Средняя комната</string>
+  <string name="largeroom">Большая комната</string>
+  <string name="mediumhall">Средний холл</string>
+  <string name="largehall">Большой холл</string>
   <string name="plate">Плато</string>
-  <string name="eq_custom">Для настройки выберите «Custom»</string>
+  <string name="eq_custom">Для настройки выберите «Вручную»</string>
   <string name="power_on_prompt">Нажмите кнопку питания в правом верхнем углу.</string>
   <!-- title of control panel picker dialog [CHAR LIMIT=30] -->
   <string name="picker_title">Управление звуковыми эффектами</string>
@@ -64,8 +64,8 @@
   <string name="stereowide_none">Нет</string>
   <string name="sw_title">Расширенное стерео</string>
   <!-- Presets -->
-  <string name="preset_menu">Пресеты</string>
-  <string name="save_preset">Сохрн. пресет</string>
+  <string name="preset_menu">Предустановки</string>
+  <string name="save_preset">Сохранить пресет</string>
   <string name="load_preset">Загрузить пресет</string>
   <string name="new_preset">Новый пресет...</string>
   <string name="preset_save_toast">Пресет сохранен</string>
