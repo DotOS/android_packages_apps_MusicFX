@@ -64,4 +64,10 @@
   <string name="stereowide_none">无</string>
   <string name="sw_title">立体声场增强</string>
   <!-- Presets -->
+  <string name="preset_menu">预设</string>
+  <string name="save_preset">保存预设​​​​​​​</string>
+  <string name="load_preset">加载预设</string>
+  <string name="new_preset">新建预设</string>
+  <string name="preset_save_toast">预设已保存​​​​​​​</string>
+  <string name="preset_load_toast">预设已加载</string>
 </resources>
