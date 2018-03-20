@@ -17,7 +17,11 @@
 <resources>
   <string name="app_name">MusicFX</string>
   <!-- ControlPanelMusic strings -->
+  <string name="no_effects">Efektid pole saadaval.</string>
+  <string name="main_toggle_effects_title">Heliefektid</string>
   <string name="eq_dialog_title">Ekvalaiser</string>
+  <string name="bass_boost_strength">Bassivõimendus</string>
+  <string name="virtualizer_strength">Ruumiline heli</string>
   <string name="setup">Seadistus</string>
   <string name="normal">Tavaline</string>
   <string name="classical">Klassikaline</string>
