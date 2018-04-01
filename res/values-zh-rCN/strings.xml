@@ -39,6 +39,16 @@
   <string name="pop">流行</string>
   <string name="rock">摇滚</string>
   <string name="ci_extreme">电音</string>
+  <string name="acoustic">原音音乐</string>
+  <string name="bass_booster">低音强化</string>
+  <string name="bass_reducer">低音弱化</string>
+  <string name="classical">古典</string>
+  <string name="deep">深沉</string>
+  <string name="r_and_b">R&amp;B</string>
+  <string name="small_speakers">小型喇叭</string>
+  <string name="treble_booster">高音强化</string>
+  <string name="treble_reducer">高音弱化</string>
+  <string name="vocal_booster">人声强化</string>
   <string name="user">自定义</string>
   <string name="none">无</string>
   <string name="smallroom">小房间</string>

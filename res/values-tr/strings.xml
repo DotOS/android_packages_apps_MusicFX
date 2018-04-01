@@ -39,6 +39,16 @@
   <string name="pop">Pop</string>
   <string name="rock">Rock</string>
   <string name="ci_extreme">Elektronik</string>
+  <string name="acoustic">Akustik</string>
+  <string name="bass_booster">Bass Güçlendirici</string>
+  <string name="bass_reducer">Bass Azaltıcı</string>
+  <string name="classical">Klasik</string>
+  <string name="deep">Derin</string>
+  <string name="r_and_b">Ritim ve Blues</string>
+  <string name="small_speakers">Küçük Hoparlörler</string>
+  <string name="treble_booster">Tiz Güçlendirici</string>
+  <string name="treble_reducer">Tiz Azaltıcı</string>
+  <string name="vocal_booster">Ses Güçlendirici</string>
   <string name="user">Husûsî</string>
   <string name="none">Hiçbiri</string>
   <string name="smallroom">Küçük Oda</string>

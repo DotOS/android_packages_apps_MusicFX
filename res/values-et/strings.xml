@@ -32,6 +32,10 @@
   <string name="jazz">Jazz</string>
   <string name="pop">Popp</string>
   <string name="rock">Rokk</string>
+  <string name="acoustic">Akustiline</string>
+  <string name="classical">Klassikaline</string>
+  <string name="deep">Sügav</string>
+  <string name="r_and_b">R&amp;B</string>
   <string name="user">Kohandatud</string>
   <string name="none">Puudub</string>
   <string name="smallroom">SmallRoom</string>

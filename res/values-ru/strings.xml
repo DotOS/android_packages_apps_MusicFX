@@ -39,6 +39,11 @@
   <string name="pop">Поп</string>
   <string name="rock">Рок</string>
   <string name="ci_extreme">Усилитель FX</string>
+  <string name="acoustic">Акустика</string>
+  <string name="bass_booster">Усиление басов</string>
+  <string name="classical">Классика</string>
+  <string name="r_and_b">R&amp;B</string>
+  <string name="small_speakers">Маленькие динамики</string>
   <string name="user">Своя настройка</string>
   <string name="none">Нет</string>
   <string name="smallroom">Маленькая комната</string>

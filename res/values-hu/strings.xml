@@ -39,6 +39,16 @@
   <string name="pop">Pop</string>
   <string name="rock">Rock</string>
   <string name="ci_extreme">FX booster</string>
+  <string name="acoustic">Akusztikus</string>
+  <string name="bass_booster">Mély kiemelés</string>
+  <string name="bass_reducer">Mély csökkentés</string>
+  <string name="classical">Klasszikus</string>
+  <string name="deep">Mély</string>
+  <string name="r_and_b">R&amp;B</string>
+  <string name="small_speakers">Kis hangszórók</string>
+  <string name="treble_booster">Magas kiemelés</string>
+  <string name="treble_reducer">Magas csökkentés</string>
+  <string name="vocal_booster">Ének kiemelés</string>
   <string name="user">Egyéni</string>
   <string name="none">Nincs</string>
   <string name="smallroom">Kis szoba</string>
