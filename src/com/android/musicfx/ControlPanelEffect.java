@@ -95,7 +95,7 @@ public class ControlPanelEffect {
             mPresetReverb = new PresetReverb(0, sessionId);
             try {
                 mStereoWide = new StereoWide(0, sessionId);
-            } catch(java.lang.IllegalArgumentException e) {
+            } catch(Exception e) {
                 mStereoWide = null;
             }
         }
