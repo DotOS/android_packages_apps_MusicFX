@@ -39,6 +39,12 @@
   <string name="pop">Pop</string>
   <string name="rock">Rock</string>
   <string name="ci_extreme">Electrônica</string>
+  <string name="acoustic">Acústico</string>
+  <string name="bass_booster">Amplificar os baixos</string>
+  <string name="bass_reducer">Reduzir os baixos</string>
+  <string name="small_speakers">Alto-falantes pequenos</string>
+  <string name="treble_booster">Amplificar agudos</string>
+  <string name="treble_reducer">Reduzir agudos</string>
   <string name="user">Personalizado</string>
   <string name="none">Sem efeito</string>
   <string name="smallroom">Sala pequena</string>
@@ -68,4 +74,6 @@
   <string name="save_preset">Salvar predefinição</string>
   <string name="load_preset">Carregar predefinição</string>
   <string name="new_preset">Nova predefinição...</string>
+  <string name="preset_save_toast">Predefinição salva</string>
+  <string name="preset_load_toast">Predefinição carregada</string>
 </resources>

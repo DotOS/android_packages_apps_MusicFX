@@ -39,6 +39,16 @@
   <string name="pop">Pop</string>
   <string name="rock">Rock</string>
   <string name="ci_extreme">FX-Verstärker</string>
+  <string name="acoustic">Akustik</string>
+  <string name="bass_booster">Mehr Bässe</string>
+  <string name="bass_reducer">Weniger Bässe</string>
+  <string name="classical">Klassik</string>
+  <string name="deep">Deep</string>
+  <string name="r_and_b">R&amp;B</string>
+  <string name="small_speakers">Kleine Lautsprecher</string>
+  <string name="treble_booster">Mehr Höhen</string>
+  <string name="treble_reducer">Weniger Höhen</string>
+  <string name="vocal_booster">Sprache verstärken</string>
   <string name="user">Nutzer</string>
   <string name="none">Kein</string>
   <string name="smallroom">Kleiner Raum</string>
