@@ -39,6 +39,16 @@
   <string name="pop">Pop</string>
   <string name="rock">Rock</string>
   <string name="ci_extreme">FX Booster</string>
+  <string name="acoustic">Akoestiek</string>
+  <string name="bass_booster">Basversterker</string>
+  <string name="bass_reducer">Basverzwakker</string>
+  <string name="classical">Klassiek</string>
+  <string name="deep">Diep</string>
+  <string name="r_and_b">R&amp;B</string>
+  <string name="small_speakers">Kleine speakers</string>
+  <string name="treble_booster">Hoge tonenversterker</string>
+  <string name="treble_reducer">Hoge tonenverzwakker</string>
+  <string name="vocal_booster">Stemversterker</string>
   <string name="user">Gebruiker</string>
   <string name="none">Geen</string>
   <string name="smallroom">SmallRoom</string>
@@ -64,4 +74,10 @@
   <string name="stereowide_none">Geen</string>
   <string name="sw_title">Stereo widener</string>
   <!-- Presets -->
+  <string name="preset_menu">Voorkeursinstellingen</string>
+  <string name="save_preset">Voorkeursinstellingen opslaan</string>
+  <string name="load_preset">Voorkeurinstelling laden</string>
+  <string name="new_preset">Nieuwe voorkeurinstelling...</string>
+  <string name="preset_save_toast">Voorkeursinstelling opgeslagen</string>
+  <string name="preset_load_toast">Voorkeursinstelling geladen</string>
 </resources>

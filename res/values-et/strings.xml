@@ -40,6 +40,7 @@
   <string name="none">Puudub</string>
   <string name="smallroom">SmallRoom</string>
   <string name="largeroom">LargeRoom</string>
+  <string name="power_on_prompt">Vajuta toitenuppu üleval paremal.</string>
   <!-- title of control panel picker dialog [CHAR LIMIT=30] -->
   <string name="toggle_button_on">Sees</string>
   <string name="toggle_button_off">Väljas</string>
