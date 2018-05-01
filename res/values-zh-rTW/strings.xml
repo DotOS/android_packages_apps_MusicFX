@@ -21,6 +21,7 @@
   <string name="main_toggle_effects_title">音效</string>
   <string name="eq_dialog_title">驍龍音效</string>
   <string name="headset_plug">插上耳機感受各種音效</string>
+  <string name="combo_device">效果只有在插入耳機才能使用。</string>
   <string name="bass_boost_strength">低音加強</string>
   <string name="virtualizer_strength">環繞音效</string>
   <string name="pr_title">混響效果：</string>
@@ -38,6 +39,16 @@
   <string name="pop">流行</string>
   <string name="rock">搖滾</string>
   <string name="ci_extreme">電音</string>
+  <string name="acoustic">原音音樂</string>
+  <string name="bass_booster">低音加強</string>
+  <string name="bass_reducer">低音弱化</string>
+  <string name="classical">古典</string>
+  <string name="deep">深沉</string>
+  <string name="r_and_b">R&amp;B</string>
+  <string name="small_speakers">小型喇叭</string>
+  <string name="treble_booster">高音強化</string>
+  <string name="treble_reducer">高音弱化</string>
+  <string name="vocal_booster">人聲強化</string>
   <string name="user">自定義</string>
   <string name="none">無</string>
   <string name="smallroom">小房間</string>
@@ -50,5 +61,23 @@
   <string name="power_on_prompt">按右上角的開關打開音效</string>
   <!-- title of control panel picker dialog [CHAR LIMIT=30] -->
   <string name="picker_title">音樂效果控制台</string>
+  <string name="toggle_button_on">開啟</string>
+  <string name="toggle_button_off">關閉</string>
+  <string name="drawer_item_speaker">手機喇叭</string>
+  <string name="drawer_item_headset">耳機</string>
+  <string name="drawer_item_bluetooth">藍牙裝置</string>
+  <string name="drawer_open">開啟側邊選單</string>
+  <string name="drawer_close">關閉側邊選單</string>
+  <string name="stereowide_light">明亮</string>
+  <string name="stereowide_moderate">中等</string>
+  <string name="stereowide_high">高</string>
+  <string name="stereowide_none">無</string>
+  <string name="sw_title">立體聲增強</string>
   <!-- Presets -->
+  <string name="preset_menu">預設</string>
+  <string name="save_preset">保存預設</string>
+  <string name="load_preset">載入預設</string>
+  <string name="new_preset">新的預設……</string>
+  <string name="preset_save_toast">預設已保存</string>
+  <string name="preset_load_toast">預設已載入</string>
 </resources>
