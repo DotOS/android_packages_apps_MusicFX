@@ -39,6 +39,16 @@
   <string name="pop">Pop</string>
   <string name="rock">Rock</string>
   <string name="ci_extreme">FX booster</string>
+  <string name="acoustic">Acústica</string>
+  <string name="bass_booster">Refuerzo de graves</string>
+  <string name="bass_reducer">Reducir bajos</string>
+  <string name="classical">Clásica</string>
+  <string name="deep">Profunda</string>
+  <string name="r_and_b">R&amp;B</string>
+  <string name="small_speakers">Altavoces pequeños</string>
+  <string name="treble_booster">Potenciar agudos</string>
+  <string name="treble_reducer">Reducir agudos</string>
+  <string name="vocal_booster">Potenciador vocal</string>
   <string name="user">Usuario</string>
   <string name="none">Ninguno</string>
   <string name="smallroom">Habitación pequeña</string>
@@ -67,4 +77,7 @@
   <string name="preset_menu">Programar</string>
   <string name="save_preset">Guardar ajustes</string>
   <string name="load_preset">Cargar ajuste</string>
+  <string name="new_preset">Nuevo preajuste...</string>
+  <string name="preset_save_toast">Preajuste guardado</string>
+  <string name="preset_load_toast">Preajuste cargado</string>
 </resources>
