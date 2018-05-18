@@ -39,6 +39,16 @@
   <string name="pop">Pop</string>
   <string name="rock">Rock</string>
   <string name="ci_extreme">FX booster</string>
+  <string name="acoustic">Acustica</string>
+  <string name="bass_booster">Amplificazione bassi</string>
+  <string name="bass_reducer">Riduzione bassi</string>
+  <string name="classical">Classica</string>
+  <string name="deep">Intenso</string>
+  <string name="r_and_b">R&amp;B</string>
+  <string name="small_speakers">Altoparlanti piccoli</string>
+  <string name="treble_booster">Amplificazione alti</string>
+  <string name="treble_reducer">Riduzione alti</string>
+  <string name="vocal_booster">Amplificazione voce</string>
   <string name="user">Utente</string>
   <string name="none">Nessuno</string>
   <string name="smallroom">Stanza piccola</string>
