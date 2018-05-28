@@ -46,6 +46,8 @@
   <string name="toggle_button_on">Ενεργό</string>
   <string name="toggle_button_off">Απενεργοποίηση</string>
   <string name="drawer_item_speaker">Ηχείο</string>
+  <string name="stereowide_moderate">Μέτριο</string>
+  <string name="stereowide_high">Υψηλό</string>
   <string name="stereowide_none">Κανένα</string>
   <string name="sw_title">Διευρυμένο Stereo</string>
   <!-- Presets -->
