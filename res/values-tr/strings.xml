@@ -21,12 +21,12 @@
   <string name="main_toggle_effects_title">Ses efektleri</string>
   <string name="eq_dialog_title">Dengeleyici</string>
   <string name="headset_plug">Bu efektler için kulaklığı takın.</string>
-  <string name="combo_device">Efektler sadece kulaklıkla oynatılırken desteklenir.</string>
+  <string name="combo_device">Efektler sadece kulaklıkla çalınırken desteklenir.</string>
   <string name="bass_boost_strength">Bas güçlendirme</string>
   <string name="virtualizer_strength">Surround ses</string>
   <string name="pr_title">Yankılanma</string>
   <string name="pr_summary">İlâve oda yankılanması efektleri</string>
-  <string name="pr_dialog_title">Hazır yankılanma ayarı</string>
+  <string name="pr_dialog_title">Hazır yankı ayarı</string>
   <string name="setup">Kurulum</string>
   <string name="normal">Normal</string>
   <string name="classical">Klasik</string>
@@ -60,7 +60,7 @@
   <string name="eq_custom">Husûsîleştirmek için, \"Husûsî\" öğesini seçin</string>
   <string name="power_on_prompt">Sağ üstteki güç düğmesine basın.</string>
   <!-- title of control panel picker dialog [CHAR LIMIT=30] -->
-  <string name="picker_title">Müzik efektlerinin denetim masası</string>
+  <string name="picker_title">Müzik efektlerini idare masası</string>
   <string name="toggle_button_on">Açık</string>
   <string name="toggle_button_off">Kapalı</string>
   <string name="drawer_item_speaker">Hoparlör</string>
