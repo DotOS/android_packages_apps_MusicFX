@@ -41,9 +41,14 @@
   <string name="ci_extreme">Усилитель FX</string>
   <string name="acoustic">Акустика</string>
   <string name="bass_booster">Усиление басов</string>
+  <string name="bass_reducer">Подавление басов</string>
   <string name="classical">Классика</string>
+  <string name="deep">Глубокий звук</string>
   <string name="r_and_b">R&amp;B</string>
   <string name="small_speakers">Маленькие динамики</string>
+  <string name="treble_booster">Усиление ВЧ</string>
+  <string name="treble_reducer">Усиление НЧ</string>
+  <string name="vocal_booster">Усиленный вокал</string>
   <string name="user">Своя настройка</string>
   <string name="none">Нет</string>
   <string name="smallroom">Маленькая комната</string>
