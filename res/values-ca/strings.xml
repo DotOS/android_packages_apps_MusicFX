@@ -56,7 +56,7 @@
   <string name="largeroom">Cambra gran</string>
   <string name="mediumhall">Sala mitjana</string>
   <string name="largehall">Sala gran</string>
-  <string name="plate">Plate</string>
+  <string name="plate">Placa</string>
   <string name="eq_custom">Per personalitzar seleccioneu «Personalització»</string>
   <string name="power_on_prompt">Premeu el botó d\'encesa de dalt a la dreta.</string>
   <!-- title of control panel picker dialog [CHAR LIMIT=30] -->
