@@ -23,7 +23,7 @@ import android.media.audiofx.AudioEffect;
 import android.media.audiofx.BassBoost;
 import android.media.audiofx.Equalizer;
 import android.media.audiofx.PresetReverb;
-import android.media.audiofx.StereoWide;
+//import android.media.audiofx.StereoWide;
 import android.media.audiofx.Virtualizer;
 import android.util.Log;
 
@@ -84,7 +84,7 @@ public class ControlPanelEffect {
         final BassBoost mBassBoost;
         final Virtualizer mVirtualizer;
         final PresetReverb mPresetReverb;
-        StereoWide mStereoWide;
+        //StereoWide mStereoWide;
         int mAudioSession;
 
         protected EffectSet(int sessionId) {
@@ -93,11 +93,11 @@ public class ControlPanelEffect {
             mBassBoost = new BassBoost(0, sessionId);
             mVirtualizer = new Virtualizer(0, sessionId);
             mPresetReverb = new PresetReverb(0, sessionId);
-            try {
+            /*try {
                 mStereoWide = new StereoWide(0, sessionId);
             } catch(Exception e) {
                 mStereoWide = null;
-            }
+            }*/
         }
 
         protected void release() {
@@ -105,9 +105,9 @@ public class ControlPanelEffect {
             mBassBoost.release();
             mVirtualizer.release();
             mPresetReverb.release();
-            if (mStereoWide != null) {
+            /*if (mStereoWide != null) {
                 mStereoWide.release();
-            }
+            }*/
         }
     }
 
@@ -620,13 +620,13 @@ public class ControlPanelEffect {
         boolean eqOn = prefs.getBoolean(Key.eq_enabled.toString(), EQUALIZER_ENABLED_DEFAULT);
         effectSet.mEqualizer.setEnabled(isGlobalEnabled && eqOn);
 
-        if (effectSet.mStereoWide != null) {
+        /*if (effectSet.mStereoWide != null) {
             final int swStrength = prefs.getInt(Key.sw_strength.toString(),
                     STERO_WIDE_STRENGTH_DEFAULT);
             effectSet.mStereoWide.setStrength((short) (swStrength - 1));
             boolean swOn = prefs.getBoolean(Key.sw_enabled.toString(), STERO_WIDE_ENABLED_DEFAULT);
             effectSet.mStereoWide.setEnabled(isGlobalEnabled && swOn);
-        }
+        }*/
     }
 
     private static void updateDsp(Context context, final String prefLevel) {
